@@ -48,10 +48,7 @@ libraryDependencies ++= Seq(
   "org.webjars.bower" % "angular-resource" % "1.5.8",
   "org.webjars" % "angular-sanitize" % "1.3.0-beta.18",
   "com.typesafe.play" %% "play" % "2.5.4",
-  "com.typesafe.play" %% "play-json" % "2.5.4",
-  "org.apache.httpcomponents" % "httpclient" % "4.5.1", // tmp fix for "impossible to get artifacts when data has not been loaded" error
-  "org.scalatestplus.play" %% "scalatestplus-play" % "1.5.1" % Test,
-  "org.mongodb" %% "casbah" % "3.1.0"
+  "com.typesafe.play" %% "play-json" % "2.5.4"
 )
 
 packageOptions += Package.MainClass("JettyLauncher")
