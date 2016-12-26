@@ -1,6 +1,8 @@
-Motivation for this project was to create simplest Play 2.5.4 application without Guice injection.
+# Simple Scala Play 2.5.4 application
+
+Motivation for this project was to create simplest Play 2.5.4 application without Guice injection. I think Scala doesn't need any additional implisit dependency injections and compile-time dependency makes development and mocking in autotests and way more simple and predictable.
 
 It contains few example implementations:
-- actor that contains counter of all views as its state and gives it to controller that responds to REST HTTP request
-- some settings
-- manifests info and environment variable
+* actor that contains counter of all views as its state and gives it to controller that responds to REST HTTP request
+* some settings
+* manifests info and `environment` variable
