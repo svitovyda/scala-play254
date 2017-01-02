@@ -27,18 +27,16 @@ class RouterComponents(
     case GET(p"/assets/$file*")  => controllers.Assets.at(path = "/public", file)
     case GET(p"/webjars/$file*") => controllers.WebJarAssets.at(file)
 
-    case GET(p"/") => Action {
-      Found("/assets/index.html")
-    }
+    case GET(p"/")               => Action { Found("/assets/index.html") }
 
-    case GET(p"/serverInfo") => configurations.controller.serverInfo
+    case GET(p"/serverInfo")     => configurations.controller.serverInfo
 
-    case GET(p"/hello/$to") => Action.async {
+    case GET(p"/hello/$to")      => Action.async {
       counter.controller.add().map { c => Results.Ok(s"Hello $to, you are visitor #$c today") }
     }
 
-    case GET(p"/counter") => counter.controller.get
-    case GET(p"/some")    => configurations.controller.someBusiness
+    case GET(p"/counter")        => counter.controller.get
+    case GET(p"/some")           => configurations.controller.someBusiness
   }
 
 }
