@@ -8,4 +8,6 @@ It contains few example implementations:
 * some settings
 * manifests info and `environment` variable
 
-_There may be some strange code/settings/dependencies from my work projects, I built this project for publishing without putting into it too much time and effort. The whole system may look overcomplicated as there is no business behind it. Counter may not work correctly, its just a small example of actor._
+_There may be some strange code/settings/dependencies from my work projects, I built this project for publishing without putting into it too much time and effort.
+The whole system may look overcomplicated as there is no business behind it.
+Counter may not work correctly, its just a small example of actor._
