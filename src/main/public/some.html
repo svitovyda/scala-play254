@@ -17,21 +17,19 @@
     <div>{{some.someBool}}</div>
   </div>
 
-
   <div class="content" ng-controller="main">
     <div>views: {{counter}}</div>
     Strategies (total - {{some.strategies.length}}):
-    <input type="search" ng-model="q" placeholder="filter strategies..." aria-label="filter strategies" />
+    <input type="search" ng-model="q.name" placeholder="filter strategies..." aria-label="filter strategies" />
     <ul class="example-animate-container">
       <li class="animate-repeat" ng-repeat="s in some.strategies | filter:q as results">
-        {{$index + 1}} - {{s}}
+        {{$index + 1}}: {{s.name}} ({{s.description}})
       </li>
       <li class="animate-repeat" ng-if="results.length === 0">
         <strong>No results found...</strong>
       </li>
     </ul>
   </div>
-
 
 </body>
 
