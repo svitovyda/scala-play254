@@ -39,7 +39,10 @@ object Strategy {
       } map (JsSuccess(_)) getOrElse JsError(s"Could not read Strategy: $js")
     },
     Writes[Strategy] { s =>
-      JsObject(Seq("name" -> Json.toJson(s.name), "description" -> Json.toJson(s.description)))
+      Json.obj(
+        "name" -> Json.toJson(s.name),
+        "description" -> Json.toJson(s.description)
+      )
     }
   )
 }
