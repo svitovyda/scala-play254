@@ -15,7 +15,6 @@ object CounterResponse {
   implicit val writes: Writes[CounterResponse] = Json.writes[CounterResponse]
 }
 
-
 class CounterController extends Controller {
 
   val holder: ActorRef = CounterExtension(MyComponents.actorSystem).counterHolder
@@ -25,11 +24,13 @@ class CounterController extends Controller {
 
   def get: Action[AnyContent] = Action.async {
 
-    (holder ? CounterActor.Get).map {
-      case c: Int => Ok(Json.toJson(CounterResponse(c)))
-      case _      => ExpectationFailed
+    (holder ? CounterActor.Request.Get).map {
+      case CounterActor.Response.Counter(c) => Ok(Json.toJson(CounterResponse(c)))
+      case _                                => ExpectationFailed
     }
   }
 
-  def add(): Future[Int] = (holder ? CounterActor.Add).mapTo[Int]
+  def add(): Future[Int] = (holder ? CounterActor.Request.Add)
+    .mapTo[CounterActor.Response.Counter]
+    .map(_.counter)
 }

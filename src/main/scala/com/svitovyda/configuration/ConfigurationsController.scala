@@ -60,7 +60,7 @@ class ConfigurationsController extends Controller {
   val counter: ActorRef = CounterExtension(MyComponents.actorSystem).counterHolder
 
   def someBusiness = Action {
-    counter ! CounterActor.Add
+    counter ! CounterActor.Request.Add
     Ok(Json.toJson(Business(settings.strategies, settings.anyBool)))
   }
 

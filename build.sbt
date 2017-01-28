@@ -47,6 +47,9 @@ libraryDependencies ++= Seq(
   "org.webjars.bower" % "angularjs" % "1.5.8",
   "org.webjars.bower" % "angular-resource" % "1.5.8",
   "org.webjars" % "angular-sanitize" % "1.3.0-beta.18",
+  "com.typesafe.akka" %% "akka-testkit" % "2.3.9",
+  "org.scalatest" %% "scalatest" % "3.0.1" % "test",
+  "org.scalacheck" %% "scalacheck" % "1.12.1" % "test",
   "com.typesafe.play" %% "play" % "2.5.4",
   "com.typesafe.play" %% "play-json" % "2.5.4"
 )
